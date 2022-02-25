@@ -1,0 +1,162 @@
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg-calendar: #1b1e22;
+    --color-cell: #e3e3e3;
+    --color-cell-disabled: #424649;
+}
+
+.root {
+    max-width: 400px;
+    margin: auto;
+}
+
+.calendar {
+    padding: 20px 0px;
+    width: 100%;
+    font-family: sans-serif;
+}
+
+.control {
+    cursor: pointer;
+}
+
+.month-name {
+    width: 450px;
+    /* font-size: 70px; */
+    font-size: 40px;
+    color: #313030;
+    text-transform: uppercase;
+}
+
+
+/* SECTION FECHA */
+
+.group {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.group__icon {
+    font-size: 20px;
+    color: #313030;
+    box-shadow: 0 4px 2px -2px gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-circle {
+    font-size: 10px;
+}
+
+.icon {
+    padding-right: 15px;
+}
+
+.fa {
+    padding-bottom: 20%;
+}
+
+
+/* GRID - CALENDARIO */
+
+.calendar__body {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.grid__header,
+.grid__body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-family: 'Oswald', sans-serif;
+}
+
+.grid__header {
+    margin-bottom: 40px;
+    color: #424649;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    grid-gap: 10px;
+    font-size: 15px;
+}
+
+.grid__body {
+    grid-auto-rows: auto;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    height: 350px;
+    grid-gap: 15px;
+}
+
+.grid__cell {
+    display: flex;
+    align-items: center;
+}
+
+.grid__cell--gd {
+    cursor: pointer;
+    border-top: 3px solid #424649;
+}
+
+.grid__cell--selected {
+    background: #f3f1f1;
+    padding-left: 10px;
+    color: #ea5753;
+    border-top: 3px solid #ea5753;
+}
+
+.grid__cell--disabled {
+    color: #87888a;
+    cursor: not-allowed;
+    border-top: 3px solid #87888a;
+}
+
+@media screen and (min-width: 768px) {
+    .month-name {
+        width: 485px;
+    }
+    .group {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .month-name {
+        font-size: 70px;
+    }
+    .group__icon {
+        font-size: 25px;
+    }
+    .icon {
+        padding-right: 30px;
+    }
+    .root {
+        max-width: 1340px;
+        margin: auto;
+    }
+    .grid__header {
+        font-size: 20px;
+        /* grid-gap: 30px; */
+    }
+    .grid__body {
+        font-size: 35px;
+        grid-gap: 15px;
+    }
+    .grid__body {
+        height: 600px;
+    }
+}
+
+@media screen and (min-width: 1024px) {}
